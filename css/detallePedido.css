@@ -1,0 +1,193 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 22 oct. 2025, 8:12:41 p. m.
+    Author     : PC
+*/
+:root {
+  --fondo: #f6f5f3;
+  --fondo2: #e9e4dc;
+  --texto: #004766; /* Azul oscuro principal */
+  --texto-sec: #5a6a78; /* Un azul grisáceo para secundarios */
+  --acento: #003247; /* Azul un poco más oscuro para acentos */
+  --acento-oscuro: #002233; /* Más oscuro para hover, bordes */
+  --naranja: #a3b8cc; /* Cambia color cálido amarillo a azul frío claro */
+  --borde: #9eafbf; /* Color borde azul gris */
+  --sombras: 0 6px 14px rgba(0, 71, 102, 0.10); /* Sombra azul muy ligera */
+}
+
+/* Fondo general */
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+ font-family: "Garamond";
+  margin: 0;
+  padding: 24px 16px;
+  line-height: 1.5;
+}
+
+/* Header y título */
+header {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--acento);
+  text-align: center;
+  margin-bottom: 24px;
+  text-shadow: 0 0 8px var(--borde);
+}
+
+/* Contenedor principal */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--fondo2);
+  padding: 32px 40px;
+  border-radius: 16px;
+  box-shadow: var(--sombras);
+  box-sizing: border-box;
+}
+
+/* Encabezados */
+h2, h3 {
+  color: var(--acento-oscuro);
+  margin-bottom: 16px;
+  text-shadow: 0 0 6px var(--borde);
+}
+
+/* Datos de pedido */
+main p {
+  font-size: 1.05rem;
+  margin: 8px 0;
+}
+
+main p strong {
+  color: var(--acento);
+  font-weight: 700;
+}
+
+/* Estado del pedido con color */
+.estado {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  box-shadow: 0 0 8px var(--borde);
+  margin-left: 8px;
+  user-select: none;
+}
+.estado.Pendiente { background-color: var(--naranja); color: var(--fondo); }
+.estado.Procesando { background-color: var(--acento); color: var(--fondo); }
+.estado.Enviado { background-color: var(--exito); color: white; }
+.estado.Cancelado { background-color: var(--error); color: white; }
+
+/* Tabla productos */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin-bottom: 24px;
+}
+
+thead th {
+  background-color: var(--acento);
+  color: var(--fondo);
+  padding: 12px 16px;
+  text-align: left;
+  border-radius: 12px 12px 0 0;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px var(--sombras);
+}
+
+tbody tr {
+  background-color: var(--fondo2);
+  box-shadow: 0 4px 12px var(--sombras);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+tbody tr:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--acento);
+}
+
+tbody td {
+  padding: 14px 16px;
+  font-size: 1rem;
+  color: var(--texto-sec);
+}
+
+tbody td:nth-child(1) {
+  color: var(--acento-oscuro);
+  font-weight: 700;
+}
+
+tfoot tr th,
+tfoot tr td {
+  padding: 10px 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: right;
+  color: var(--acento);
+  background-color: var(--fondo2);
+  border-top: 2px solid var(--acento);
+  border-radius: 0 0 12px 12px;
+}
+
+tfoot tr th {
+  width: 80%;
+}
+
+/* Mensaje final */
+main > p:last-of-type {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 30px;
+  text-align: center;
+  color: var(--acento-oscuro);
+}
+
+/* Botón volver */
+.btn-volver {
+  display: inline-block;
+  margin: 30px auto 0 auto;
+  background: linear-gradient(90deg, var(--acento) 0%, var(--naranja) 100%);
+  color: var(--fondo);
+  padding: 14px 36px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 0 14px var(--acento);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+.btn-volver:hover {
+  background: linear-gradient(90deg, var(--naranja) 0%, var(--acento) 100%);
+  box-shadow: 0 0 20px var(--naranja);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  main {
+    padding: 24px 20px;
+  }
+  thead th {
+    font-size: 0.9rem;
+    padding: 10px 8px;
+  }
+  tbody td {
+    font-size: 0.9rem;
+    padding: 10px 8px;
+  }
+  .btn-volver {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+}

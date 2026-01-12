@@ -1,0 +1,430 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 7 set. 2025, 1:48:02 a. m.
+    Author     : PC
+*/
+:root {
+  --fondo: #f6f5f3;
+  --fondo2: #e9e4dc;
+  --texto: #004766; /* Azul oscuro principal */
+  --texto-sec: #5a6a78; /* Un azul grisáceo para secundarios */
+  --acento: #003247; /* Azul un poco más oscuro para acentos */
+  --acento-oscuro: #002233; /* Más oscuro para hover, bordes */
+  --naranja: #a3b8cc; /* Cambia color cálido amarillo a azul frío claro */
+  --borde: #9eafbf; /* Color borde azul gris */
+  --sombras: 0 6px 14px rgba(0, 71, 102, 0.10); /* Sombra azul muy ligera */
+}
+
+/* --- RESET GENERAL --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Garamond";
+  background-color: var(--fondo);
+  color: var(--texto);
+  min-height: 100vh;
+}
+/* HEADER Y NAV */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  border-bottom: 1px solid var(--borde);
+  position: sticky;
+  top: 0;
+  background: var(--fondo2);
+  z-index: 1000;
+  box-shadow: 0 2px 8px var(--sombras);
+}
+
+.logo {
+  flex: 0 0 auto;
+}
+.logo img {
+  height: 60px;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+/* NAV igual */
+nav {
+  flex: 1 1 auto;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding-left: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+nav ul li a {
+  text-decoration: none;
+  color: var(--texto-sec);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: color 0.2s, background 0.2s;
+  padding: 7px 13px;
+  border-radius: 8px;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  background: var(--acento);
+  color: var(--fondo2);
+}
+
+/* ICONOS + USUARIO */
+.icons {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* BLOQUE USUARIO: texto + botón + icono user */
+.user-area {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--acento-oscuro);
+}
+
+/* Texto usuario (similar a tu antiguo header-user span) */
+.user-area {
+  display: inline-flex;
+  align-items: center;   /* centra verticalmente texto + botón + icono */
+  gap: 10px;             /* espacio entre nombre, botón e icono */
+  font-size: 15px;
+  color: var(--acento-oscuro);
+}
+
+.user-area form {
+  margin: 0;             /* evita que el form empuje el botón hacia abajo */
+}
+
+
+/* Botón cerrar sesión (igual diseño que tenías) */
+.btn-logout {
+  background: none;
+  border: none;
+  color: var(--acento);
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 0;            /* sin padding raro que lo desalineé */
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1;        /* ayuda a centrarlo mejor */
+}
+
+.btn-logout:hover {
+  color: var(--acento-oscuro);
+}
+.icons {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;       /* espacio entre user-area, corazón y carrito */
+  margin-left: 20px; /* separa todo el bloque de iconos del nav (PROMOS) */
+}
+
+/* Iconos */
+.icons a {
+  display: inline-flex;
+  align-items: center;
+}
+.icons img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px var(--sombras);
+  transition: box-shadow 0.3s, transform 0.3s ease;
+  border-radius: 6px;
+  background: var(--fondo2);
+}
+.icons img:hover {
+  box-shadow: 0 4px 12px var(--acento);
+  transform: scale(1.1);
+}
+
+
+/* --- LOGIN FORM POPUP --- */
+.login-centrado {
+  display: grid;
+  place-items: center;
+  min-height: 60vh;
+  padding: 20px;
+  background-color: var(--fondo);
+}
+
+.login-container {
+  width: 420px;
+  max-width: 95vw;
+  min-width: 0;
+  padding: 30px 40px;
+  border-radius: 12px;
+  background: var(--fondo2);
+  box-shadow: 0 0 20px var(--acento);
+  color: var(--texto);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.login-icon {
+  display: block;
+  margin: 0 auto 24px;
+  width: 64px;
+  height: 64px;
+  filter: drop-shadow(0 0 12px var(--acento));
+}
+
+.login-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  color: var(--acento);
+  text-shadow: 0 0 10px var(--acento);
+  font-weight: 900;
+}
+
+.login-container p, .login-container a, .login-container span {
+  color: var(--texto-sec);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.login-container .error-mensaje {
+  color: var(--acento-oscuro);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.login-container a {
+  color: var(--acento);
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.login-container a:hover {
+  color: var(--acento-oscuro);
+}
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 14px 16px;
+  margin: 10px 0 18px;
+  border: 1px solid var(--acento);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--fondo);
+  color: var(--texto);
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+/* fila: input contraseña + botón ojo al costado */
+.password-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 18px;
+}
+
+.password-row input {
+  flex: 1;
+}
+
+.password-row .toggle-password {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--acento);
+  background: var(--fondo);
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--acento);
+  box-shadow: 0 2px 5px var(--sombras);
+}
+
+.password-row .toggle-password:hover {
+  background: var(--naranja);
+  color: var(--fondo2);
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+  border-color: var(--naranja);
+  outline: none;
+  box-shadow: 0 0 8px var(--naranja);
+}
+.login-container button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, var(--acento) 0%, var(--naranja) 100%);
+  color: var(--fondo);
+  font-weight: 800;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px var(--naranja);
+  margin-bottom: 8px;
+}
+.login-container button:hover {
+  background: linear-gradient(90deg, var(--naranja) 0%, var(--acento) 100%);
+  box-shadow: 0 0 20px var(--acento);
+}
+.login-container .nota {
+  margin-top: 18px;
+  font-size: 1rem;
+  color: var(--texto-sec);
+}
+
+/* User Dashboard */
+.user-dashboard {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem;
+}
+.purchase-history, .edit-user-data {
+  flex: 1;
+  border: 1px solid var(--borde);
+  padding: 1rem;
+  border-radius: 6px;
+  background: var(--fondo2);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid var(--borde);
+}
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+input[type="text"] {
+  width: 95%;
+  padding: 0.4rem;
+  margin-top: 0.2rem;
+}
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .login-container {
+    width: 98vw;
+    max-width: 98vw;
+    padding: 18px 10px;
+  }
+  .login-icon {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 16px;
+  }
+  .logo,
+  .header-user,
+  nav,
+  .icons {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .logo img {
+    height: 50px;
+    margin-bottom: 0;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  nav ul li a {
+    padding: 10px 0;
+    width: 100%;
+    display: block;
+    text-align: left;
+  }
+  .icons {
+    gap: 15px;
+    margin-top: 0;
+  }
+  .header-user {
+    font-size: 13px;
+    margin-left: 0;
+  }
+  .banner {
+    height: 280px;
+    border-radius: 8px;
+  }
+  .banner-text {
+    left: 5%;
+    padding: 20px 15px;
+    max-width: 90%;
+  }
+  .banner-text h1 {
+    font-size: 1.6rem;
+  }
+  .banner-text p {
+    font-size: 1rem;
+  }
+  .productos {
+    padding: 16px 20px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 16px;
+  }
+  .logo,
+  .user-area,
+  nav,
+  .icons {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .user-area {
+    font-size: 13px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-area,
+  nav ul li a {
+    font-size: 13px;
+  }
+}
+

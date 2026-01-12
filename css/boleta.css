@@ -1,0 +1,294 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 29 nov. 2025, 1:51:48 a. m.
+    Author     : PC
+*/
+
+:root {
+  --color-texto: #222;
+  --color-secundario: #555;
+  --color-borde: #ccc;
+  --color-fondo: #ffffff;
+  --color-fondo-hoja: #f9f9f9;
+  --color-header: #003247;
+  --color-header-texto: #ffffff;
+  --color-total: #004766;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--color-fondo-hoja);
+  color: var(--color-texto);
+  padding: 20px;
+}
+
+/* Contenedor principal de la boleta */
+.boleta-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--color-fondo);
+  box-shadow: var(--shadow);
+  padding: 24px 28px;
+  border-radius: 8px;
+}
+
+/* Header */
+.boleta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border-bottom: 2px solid var(--color-borde);
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+}
+
+.empresa {
+  display: flex;
+  gap: 12px;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+}
+
+.empresa-datos h1 {
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.empresa-datos p {
+  font-size: 0.85rem;
+  color: var(--color-secundario);
+  line-height: 1.3;
+}
+
+/* Cuadro de boleta (RUC, número) */
+.boleta-info {
+  min-width: 220px;
+  border: 2px solid var(--color-header);
+  border-radius: 6px;
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.boleta-info p {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.boleta-info h2 {
+  font-size: 0.95rem;
+  margin: 6px 0;
+  font-weight: 700;
+}
+
+/* Bloques secciones */
+.cliente-datos,
+.pedido-info,
+.detalle,
+.totales,
+.acciones {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+/* Datos cliente */
+.cliente-datos p {
+  font-size: 0.9rem;
+  margin: 2px 0;
+}
+
+/* Tablas generales */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.pedido-info table th,
+.pedido-info table td {
+  border: 1px solid var(--color-borde);
+  padding: 6px 8px;
+  text-align: left;
+}
+
+/* Detalle */
+.detalle table thead {
+  background: #eef2f6;
+}
+
+.detalle table th,
+.detalle table td {
+  border: 1px solid var(--color-borde);
+  padding: 6px 8px;
+}
+
+.detalle table th {
+  text-align: center;
+  font-weight: 600;
+}
+
+.detalle table td:nth-child(1),
+.detalle table td:nth-child(4),
+.detalle table td:nth-child(5) {
+  text-align: right;
+}
+
+/* Totales */
+.totales {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.totales table {
+  max-width: 280px;
+}
+
+.totales td,
+.totales th {
+  border: 1px solid var(--color-borde);
+  padding: 6px 8px;
+}
+
+.totales td:first-child,
+.totales th:first-child {
+  text-align: left;
+}
+
+.totales td:last-child,
+.totales th:last-child {
+  text-align: right;
+}
+
+.totales th {
+  background: #eef2f6;
+  color: var(--color-total);
+}
+
+/* Botón descargar */
+.acciones {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.acciones button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  background: linear-gradient(90deg, var(--color-header) 0%, #005f88 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 50, 71, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.acciones button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 50, 71, 0.40);
+  opacity: 0.95;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .boleta-wrapper {
+    padding: 16px 14px;
+  }
+
+  .boleta-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .empresa {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .boleta-info {
+    align-self: stretch;
+  }
+
+  .empresa-datos h1 {
+    font-size: 1rem;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  .totales {
+    justify-content: center;
+  }
+
+  .totales table {
+    width: 100%;
+    max-width: none;
+  }
+
+  .acciones {
+    justify-content: center;
+  }
+}
+.btn-volver {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 1px solid #003247;
+  color: #003247;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-volver:hover {
+  background: #003247;
+  color: #ffffff;
+}
+
+
+@media (max-width: 480px) {
+  .boleta-wrapper {
+    padding: 12px 10px;
+  }
+
+  .logo img {
+    width: 60px;
+  }
+
+  .empresa-datos p {
+    font-size: 0.8rem;
+  }
+
+  .boleta-info {
+    font-size: 0.8rem;
+  }
+
+  .acciones button {
+    width: 100%;
+    text-align: center;
+  }
+}

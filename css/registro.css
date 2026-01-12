@@ -1,0 +1,174 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 13 set. 2025, 8:22:58 p. m.
+    Author     : PC
+*/
+:root {
+  --fondo: #f6f5f3;
+  --fondo2: #e9e4dc;
+  --texto: #004766;
+  --texto-sec: #5a6a78;
+  --acento: #003247;
+  --acento-oscuro: #002233;
+  --naranja: #a3b8cc;
+  --borde: #9eafbf;
+  --sombras: 0 6px 14px rgba(0, 71, 102, 0.10);
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: "Garamond", serif;
+}
+
+/* Centrar tarjeta de registro */
+.registro-main {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 30px 15px;
+}
+
+.registro-card {
+  width: 480px;
+  max-width: 95vw;
+  background: var(--fondo2);
+  border-radius: 12px;
+  box-shadow: 0 0 20px var(--acento);
+  padding: 30px 40px;
+  box-sizing: border-box;
+}
+
+.registro-card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--acento);
+  text-shadow: 0 0 10px var(--acento);
+  font-weight: 900;
+}
+
+.registro-error {
+  color: var(--acento-oscuro);
+  background: #fbe4e4;
+  border: 1px solid #e0b4b4;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.registro-card label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--texto-sec);
+}
+
+.registro-card input[type="email"],
+.registro-card input[type="text"],
+.registro-card input[type="tel"],
+.registro-card input[type="password"],
+.registro-card textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--acento);
+  background: var(--fondo);
+  color: var(--texto);
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.registro-card input:focus,
+.registro-card textarea:focus {
+  outline: none;
+  border-color: var(--naranja);
+  box-shadow: 0 0 8px var(--naranja);
+}
+
+.registro-card textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+/* fila input + botón Mostrar */
+.password-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.password-row input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.password-row .toggle-password {
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--acento);
+  background: var(--fondo);
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--acento);
+  box-shadow: 0 2px 5px var(--sombras);
+  font-weight: 700;
+}
+
+.password-row .toggle-password:hover {
+  background: var(--naranja);
+  color: var(--fondo2);
+}
+
+/* Botón principal */
+.btn-registrarse {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, var(--acento) 0%, var(--naranja) 100%);
+  color: var(--fondo);
+  font-weight: 800;
+  font-size: 1.05rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--naranja);
+  margin-top: 8px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-registrarse:hover {
+  background: linear-gradient(90deg, var(--naranja) 0%, var(--acento) 100%);
+  box-shadow: 0 0 20px var(--acento);
+}
+
+/* Texto inferior */
+.registro-nota {
+  margin-top: 16px;
+  text-align: center;
+  color: var(--texto-sec);
+  font-size: 0.95rem;
+}
+
+.registro-nota a {
+  color: var(--acento);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.registro-nota a:hover {
+  color: var(--acento-oscuro);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .registro-card {
+    padding: 20px 15px;
+    width: 100%;
+  }
+}

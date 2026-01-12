@@ -1,0 +1,336 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 4 oct. 2025, 11:07:12 p. m.
+    Author     : PC
+*/
+/* Hereda el home.css y añade estilos para la página de productos */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    background-color: #f4f7f8;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Sidebar fijo */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;        /* Altura completa */
+    width: 250px;         /* Ancho fijo */
+    background-color: #3b5998;
+    color: white;
+    overflow-y: auto;     /* Scroll vertical si es largo */
+    overflow-x: hidden;
+    z-index: 10;
+    padding-bottom: 10px;
+}
+
+/* Logo del sidebar */
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Perfil admin */
+.profile {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.profile .avatar {
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile h3 {
+    margin-bottom: 4px;
+}
+
+.profile p {
+    font-size: 14px;
+    color: #c9d1d9;
+}
+
+/* Menú de navegación */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+}
+
+nav ul li i.material-icons {
+    margin-right: 10px;
+}
+
+nav ul li:hover {
+    background-color: #344e86;
+}
+nav ul li.dropdown {
+    position: relative;
+}
+nav ul li.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3b5998;
+    min-width: 220px;
+    top: 38px;
+    left: 0;
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+nav ul li.dropdown .dropdown-content li {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+nav ul li.dropdown .dropdown-content li:last-child {
+    border-bottom: none;
+}
+nav ul li.dropdown .dropdown-content li a {
+    color: white;
+    padding: 12px 18px;
+    display: block;
+    font-size: 15px;
+    text-decoration: none;
+}
+nav ul li.dropdown .dropdown-content li a:hover {
+    background-color: #2a3970;
+}
+
+
+
+/* Contenido principal */
+.main-content {
+    margin-left: 250px;          /* Deja espacio para la sidebar */
+    padding: 20px 30px;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+    overflow-x: hidden;
+}
+
+/* Header fijo */
+header {
+    position: sticky;
+    top: 0;
+    background: #3b5998;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 0 0 4px 4px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+}
+
+/* Información usuario en header */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info i.material-icons {
+    cursor: pointer;
+}
+
+.user-info .avatar-small {
+    width: 35px;
+    border-radius: 50%;  
+}
+
+.tabs {
+    margin: 25px 0 15px 0;
+    display: flex;
+    gap: 12px;
+}
+
+.tab-btn {
+    background: #3b5998;
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 10px 26px;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.2s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background: #344e86;
+}
+
+.tab-content {
+    background: white;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 1px 16px #e3e6e8 inset;
+    padding: 24px 22px 22px 22px;
+    margin-bottom: 30px;
+    min-height: 150px;
+}
+
+.form-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    row-gap: 12px;
+    margin-bottom: 10px;
+}
+
+.form-product label {
+    grid-column: span 2;
+    font-weight: 600;
+    color: #344e86;
+}
+
+.form-product input, .form-product button, .form-product select {
+    padding: 9px;
+    border-radius: 4px;
+    border: 1px solid #ccd7e4;
+    font-size: 15px;
+    width: 90%;
+}
+
+.form-product select[multiple] {
+    min-height: 70px;
+    background: #eef2f8;
+}
+
+.form-product button {
+    background: #3b5998;
+    color: white;
+    font-weight: 700;
+    grid-column: span 2;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.tiles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 24px;
+    margin-top: 18px;
+}
+
+.tile-product {
+    background: linear-gradient(135deg, #f7fafd 60%, #e6f0fc 100%);
+    border-radius: 10px;
+    box-shadow: 0 2px 18px rgba(50,90,200,0.09), 0 0 0 1.5px #e0e6ef;
+    padding: 24px 18px 20px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.15s cubic-bezier(.4,1,.7,1.3), box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.tile-product:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 8px 30px rgba(50,90,180,0.13), 0 0 0 1.5px #b1dbfc;
+    border: 2px solid #9fc7ff;
+}
+
+.product-img {
+    width: 104px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 7px;
+    box-shadow: 0 1px 6px #c3e2fa70;
+    margin-bottom: 16px;
+    border: 1.5px solid #daeaff;
+    background: #fff;
+    transition: box-shadow .2s;
+}
+
+.tile-product:hover .product-img {
+    box-shadow: 0 4px 24px #a9ccf8af;
+}
+
+.tile-product form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.tile-product input[type="text"],
+.tile-product input[type="number"] {
+    margin-bottom: 7px;
+    background: #f4f7fa;
+    color: #3460b3;
+    border: 1.3px solid #d9eafd;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 15px;
+    transition: border .18s;
+}
+
+.tile-product input:focus {
+    border: 1.5px solid #4a90ff;
+    outline: none;
+}
+
+.tile-product button {
+    background: linear-gradient(90deg, #5780e3 60%, #6cd7f8 100%);
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    padding: 7.5px 0;
+    border-radius: 5px;
+    box-shadow: 0 1.5px 5px #72c7ff40;
+    cursor: pointer;
+    margin-top: 5px;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    transition: background .2s, box-shadow .18s;
+}
+
+.tile-product button:hover {
+    background: linear-gradient(90deg, #466de2 0%, #0ebcef 100%);
+    box-shadow: 0 4px 12px #63caf979;
+}
+
+.tile-product::before {
+    content: 'PRODUCTO';
+    position: absolute;
+    top: 8px;
+    left: -22px;
+    background: #f5b342;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 2.5px 24px;
+    border-radius: 0 0 18px 0;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 7px #e7b04c45;
+    transform: rotate(-8deg);
+}
+
+.tile-product input[type="text"]:disabled, .tile-product input[type="number"]:disabled {
+    background: #e8eaf6;
+    color: #b8b8b8;
+}

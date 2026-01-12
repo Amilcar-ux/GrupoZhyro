@@ -1,0 +1,237 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 26 oct. 2025, 3:10:22 p. m.
+    Author     : PC
+*/
+:root {
+  --fondo: #f6f5f3;
+  --fondo2: #e9e4dc;
+  --texto: #3a3127;
+  --texto-sec: #867a6a;
+  --acento: #c77b33;
+  --acento-oscuro: #a75c1e;
+  --naranja: #eab464;
+  --borde: #c5baa7;
+  --sombras: 0 6px 14px rgba(199,123,51,0.10);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+/* Header y navegación */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background-color: var(--fondo2);
+  border-bottom: 1px solid var(--borde);
+  box-shadow: 0 2px 8px var(--sombras);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 60px;
+  cursor: pointer;
+}
+
+.header-user {
+  color: var(--acento-oscuro);
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.header-user span {
+  color: var(--acento);
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.header-user a,
+.header-user button {
+  color: var(--acento);
+  font-weight: 700;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 8px;
+  font-family: inherit;
+  transition: color 0.3s ease;
+}
+
+.header-user button:hover,
+.header-user a:hover {
+  color: var(--acento-oscuro);
+}
+
+nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  padding-left: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--texto-sec);
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: var(--acento);
+  color: var(--fondo2);
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.icons a img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 6px;
+  background: var(--fondo2);
+  box-shadow: 0 2px 5px var(--sombras);
+  transition: box-shadow 0.3s ease;
+}
+
+.icons a img:hover {
+  box-shadow: 0 4px 12px var(--acento);
+}
+
+/* Main Perfil */
+main {
+  background: var(--fondo2);
+  color: var(--texto);
+  padding: 30px 20px;
+  max-width: 520px;
+  margin: 30px auto 60px;
+  border-radius: 18px;
+  box-shadow: var(--sombras);
+  text-align: center;
+}
+
+.perfil-card h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--acento);
+  margin-bottom: 25px;
+  border-bottom: 3px solid var(--naranja);
+  padding-bottom: 8px;
+}
+
+.perfil-card p {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--acento-oscuro);
+  margin-bottom: 28px;
+}
+
+.perfil-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.perfil-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: var(--texto-sec);
+  margin-bottom: 6px;
+}
+
+.perfil-form input[type="text"],
+.perfil-form input[type="email"] {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1.5px solid var(--borde);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.perfil-form input[type="text"]:focus,
+.perfil-form input[type="email"]:focus {
+  border-color: var(--acento);
+  outline: none;
+}
+
+.btn-carrito {
+  background: linear-gradient(135deg, var(--acento) 0%, var(--naranja) 100%);
+  color: var(--fondo);
+  font-weight: 800;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--acento);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  margin-top: 20px;
+}
+
+.btn-carrito:hover {
+  background: linear-gradient(135deg, var(--naranja) 0%, var(--acento) 100%);
+  box-shadow: 0 0 20px var(--naranja);
+}
+
+.success {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #8bc53f;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  main {
+    max-width: 90%;
+    padding: 20px 15px;
+  }
+  .perfil-card h1 {
+    font-size: 2rem;
+  }
+  .btn-carrito {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}

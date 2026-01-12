@@ -1,0 +1,78 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 28 set. 2025, 9:27:07 p. m.
+    Author     : PC
+*/
+
+/* Estilos para el fondo y contenedor del formulario */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('../images/indexAdmin.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+.login-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.85); /* Fondo blanco semitransparente */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    width: 320px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 12px 0;
+    border: none;
+    border-bottom: 2px solid #a00;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    color: #a00;
+}
+
+.login-box input::placeholder {
+    color: #a00;
+}
+
+.login-box input[type="submit"] {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: #1a3a8c;
+    font-weight: 600;
+    padding: 10px 0;
+    margin-top: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.login-box input[type="submit"]:hover {
+    color: #1041c7;
+}
+
+.error-message {
+    color: red;
+    margin-top: 15px;
+    font-size: 13px;
+}

@@ -1,0 +1,79 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 30 nov. 2025, 5:12:52 p. m.
+    Author     : PC
+*/
+/* Encabezado de la sección de productos best sellers */
+.bests-header {
+    max-width: 1200px;
+    margin: 20px auto 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.bests-header h2 {
+    font-size: 1.4rem;
+    letter-spacing: 0.06em;
+    margin: 0;
+}
+
+.bests-filtro {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.bests-filtro select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.bests-filtro button {
+    padding: 6px 12px;
+    background: var(--acento);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Imagen y badge TOP VENTAS */
+.producto-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.producto-img-wrapper img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.badge-best {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--acento);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .bests-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+

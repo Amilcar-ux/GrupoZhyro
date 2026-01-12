@@ -1,0 +1,72 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 2 nov. 2025, 11:10:04 a. m.
+    Author     : PC
+*/
+
+body {
+  font-family: 'Garamond';
+  background-color: #003247;
+  color: #dceaf5;
+  margin: 40px;
+}
+
+.container-guia {
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  color: #8eb4d0;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+h2 {
+  color: #8eb4d0;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #1f3e54;
+  padding-bottom: 5px;
+}
+
+section p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+section img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 50, 71, 0.6);
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.boton-regresar {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-regresar {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #005377;
+  color: #dceaf5;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.btn-regresar:hover {
+  background-color: #0075a3;
+  color: white;
+}
+

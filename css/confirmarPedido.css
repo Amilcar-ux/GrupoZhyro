@@ -1,0 +1,229 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 18 oct. 2025, 10:44:29 p. m.
+    Author     : PC
+*/
+:root {
+  --fondo: #f6f5f3;
+  --fondo2: #e9e4dc;
+  --texto: #004766; /* Azul oscuro principal */
+  --texto-sec: #5a6a78; /* Un azul grisáceo para secundarios */
+  --acento: #003247; /* Azul un poco más oscuro para acentos */
+  --acento-oscuro: #002233; /* Más oscuro para hover, bordes */
+  --naranja: #a3b8cc; /* Cambia color cálido amarillo a azul frío claro */
+  --borde: #9eafbf; /* Color borde azul gris */
+  --sombras: 0 6px 14px rgba(0, 71, 102, 0.10); /* Sombra azul muy ligera */
+}
+
+/* Fondo general */
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+ font-family: "Garamond";
+ margin: 0;
+  padding: 0 16px;
+}
+
+/* Barra de progreso de pasos */
+.pasos {
+  display: flex;
+  gap: 20px;
+  margin: 32px 0 24px 0;
+  justify-content: center;
+}
+.paso {
+  flex-grow: 1;
+  padding: 12px 18px;
+  border-radius: 16px;
+  background-color: var(--fondo2);
+  color: var(--texto-sec);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-align: center;
+  box-shadow: 0 0 8px var(--borde);
+  transition: background-color 0.3s, color 0.3s;
+  letter-spacing: 0.02em;
+  user-select: none;
+}
+.paso.completado {
+  background-color: var(--naranja);
+  color: var(--fondo);
+  box-shadow: 0 0 20px var(--naranja);
+}
+.paso.activo {
+  background-color: var(--acento);
+  color: var(--fondo);
+  box-shadow: 0 0 16px var(--acento);
+}
+
+.direccion-facturacion a {
+  margin-left: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--naranja);
+  text-decoration: underline;
+  background-color: var(--acento-oscuro);
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  margin-left: 20px; /* un poco más de margen a la izquierda */
+  margin-bottom: 12px; /* margen inferior para separar del formulario */
+  display: inline-block; /* para que respete márgenes correctamente */
+}
+.direccion-facturacion a:hover {
+  background-color: var(--naranja);
+  color: var(--fondo);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Contenedor principal: 2 columnas */
+.contenedor-dos-columnas {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Formulario */
+.formulario-direccion {
+  flex: 1 1 60%;
+  min-width: 250px;
+  max-width: 60%;
+  background-color: var(--fondo2);
+  padding: 32px 36px;
+  border-radius: 14px;
+  box-shadow: var(--sombras);
+  color: var(--texto);
+  border: 1px solid var(--acento-oscuro);
+  box-sizing: border-box;
+}
+.formulario-direccion label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: var(texto-sec);
+  font-size: 1rem;
+}
+
+.metodo-entrega label,
+h3 {
+  font-size: 1.05em;
+  margin-bottom: 10px;
+  display: block;
+  cursor: pointer;
+}
+
+.metodo-pago img {
+  max-height: 30px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.btn-container {
+  margin-top: 20px;
+}
+
+.btn-continuar,
+.btn-back {
+  padding: 14px 32px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  color: var(--fondo);
+  font-size: 1.08rem;
+  box-shadow: 0 0 12px var(--naranja);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.btn-continuar {
+  background: linear-gradient(90deg, var(--acento) 0%, var(--naranja) 100%);
+  margin-right: 12px; /* separar botones horizontales */
+  margin-bottom: 8px; /* para móviles o en vertical */
+}
+
+.btn-continuar:hover {
+  background: linear-gradient(90deg, var(--naranja) 0%, var(--acento) 100%);
+  box-shadow: 0 0 18px var(--acento);
+}
+
+.btn-back {
+  background: #a3987f;
+  box-shadow: 0 0 6px #675e47;
+}
+
+.btn-back:hover {
+  background: #ccc0b3;
+}
+
+/* Resumen */
+.resumen-orden {
+  flex: 0 0 30%;
+  min-width: 250px;
+  max-width: 35%;
+  background-color: var(--fondo2);
+  border-radius: 16px;
+  padding: 26px 22px;
+  box-shadow: var(--sombras);
+  color: var(--texto);
+  border: 1px solid var(--acento-oscuro);
+  height: fit-content;
+  box-sizing: border-box;
+}
+
+.resumen-orden h2 {
+  color: var(texto-sec);
+  margin-bottom: 20px;
+  text-shadow: 0 0 12px var(--naranja);
+  font-size: 1.3rem;
+}
+
+.resumen-orden div {
+  font-size: 1.08rem;
+  margin: 8px 0;
+}
+
+.resumen-orden strong {
+  color: var(--acento);
+  font-size: 1.2rem;
+  text-shadow: 0 0 6px var(--acento);
+}
+
+/* Enlaces dentro del texto */
+a {
+  color: var(--acento);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--naranja);
+  text-decoration: underline;
+}
+
+/* Responsive para móviles */
+@media (max-width: 860px) {
+  .contenedor-dos-columnas {
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 8px;
+  }
+
+  .formulario-direccion,
+  aside.resumen-orden {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .pasos {
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 8px;
+  }
+}

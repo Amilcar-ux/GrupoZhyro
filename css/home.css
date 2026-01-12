@@ -1,0 +1,367 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 28 set. 2025, 10:16:49 p. m.
+    Author     : PC
+*/
+:root {
+  --fondo: #f6f5f3;
+  --fondo2: #e9e4dc;
+  --texto: #3a3127;
+  --texto-sec: #867a6a;
+  --acento: #c77b33;
+  --acento-oscuro: #a75c1e;
+  --naranja: #eab464;
+  --borde: #c5baa7;
+  --sombras: 0 6px 14px rgba(199,123,51,0.10);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Garamond";
+  background-color: var(--fondo);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+/* Sidebar fijo */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #3b5998;
+  color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 10;
+  padding-bottom: 10px;
+}
+
+/* Logo del sidebar */
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Perfil admin */
+.profile {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.profile .avatar {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile h3 {
+  margin-bottom: 4px;
+}
+
+.profile p {
+  font-size: 14px;
+  color: #c9d1d9;
+}
+
+/* Menú de navegación */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+}
+
+nav ul li i.material-icons {
+  margin-right: 10px;
+}
+
+nav ul li:hover {
+  background-color: #344e86;
+}
+
+nav ul li.dropdown {
+  position: relative;
+}
+
+nav ul li.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #3b5998;
+  min-width: 220px;
+  top: 38px;
+  left: 0;
+  z-index: 1000;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+nav ul li.dropdown .dropdown-content li {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+nav ul li.dropdown .dropdown-content li:last-child {
+  border-bottom: none;
+}
+
+nav ul li.dropdown .dropdown-content li a {
+  color: white;
+  padding: 12px 18px;
+  display: block;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+nav ul li.dropdown .dropdown-content li a:hover {
+  background-color: #2a3970;
+}
+
+/* Contenido principal */
+.main-content {
+  margin-left: 250px;
+  padding: 20px 30px;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Header fijo */
+header {
+  position: sticky;
+  top: 0;
+  background: #3b5998;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 0 0 4px 4px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  z-index: 1000;
+}
+
+/* Información usuario en header */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info i.material-icons {
+  cursor: pointer;
+}
+
+.user-info .avatar-small {
+  width: 35px;
+  border-radius: 50%;
+}
+
+/* Tiles */
+.tile {
+  border: 2px solid var(--borde);
+  border-radius: 10px;
+  padding: 20px;
+  background-color: var(--fondo2);
+  box-shadow: var(--sombras);
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  cursor: pointer;
+  flex: 1 1 150px;
+  min-width: 150px;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+  border-color: var(--acento);
+  box-shadow: 0 8px 16px rgba(199,123,51,0.3);
+}
+
+.tile-number {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--acento);
+  text-align: center;
+}
+
+.tiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* Tabla detalle */
+#tablaDatos {
+  margin-top: 30px;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Garamond";
+  color: var(--texto);
+}
+
+#tablaDatos th,
+#tablaDatos td {
+  border: 1px solid var(--borde);
+  padding: 12px;
+  text-align: left;
+}
+
+#tablaDatos th {
+  background-color: var(--fondo2);
+  font-weight: 700;
+}
+
+/* ==== ESTILOS PARA MODALES ==== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+  display: none;          /* se muestra con JS */
+}
+
+.modal-content {
+  position: relative;
+  margin: 50px auto;
+  background: #fff;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 8px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+}
+
+.modal .close {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #999;
+}
+
+.modal .close:hover {
+  color: #000;
+}
+
+.modal-body {
+  padding-top: 15px;
+}
+
+/* Contenedor campana notificaciones */
+.notifications-container {
+  position: relative;
+  cursor: pointer;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4444;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Notificación individual en el modal */
+.notification-item {
+  padding: 12px 8px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+/* Filtros */
+.filtros {
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.filtros input,
+.filtros select,
+.filtros button {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+  .main-content {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 10px 15px;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  nav ul li.dropdown .dropdown-content {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
